@@ -1,0 +1,16 @@
+import * as React from 'react'
+
+export interface IMyLabelProps {
+    label: string
+}
+
+class MyLabel extends React.Component<IMyLabelProps> {
+    constructor(props: Readonly<IMyLabelProps>) {
+        super(props);
+    }
+    public render() {
+        return <label>{this.props.label}</label>
+    }
+}
+
+export default MyLabel;
