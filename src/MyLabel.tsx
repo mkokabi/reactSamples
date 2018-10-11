@@ -1,4 +1,5 @@
 import * as React from 'react'
+import './Mycss.css'
 
 export interface IMyLabelProps {
     label: string
