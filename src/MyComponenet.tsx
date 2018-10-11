@@ -22,9 +22,18 @@ class MyComponent extends React.Component<IMyComponentProps, IState> {
         <MyLabel label = {this.state.curNum.toString()}/>
         <Button caption="(Add)" passClickToParent={this.increase} operation={Operations.Add}/>
         <Button caption="(Sub)" passClickToParent={this.decrease} operation={Operations.Sub}/>
+        {this.numButtons()}
         </div>
     }
     
+    private numButtons() {
+        const count:number = 10;
+        const btns = [];
+        for(let num : number = 0;num<count;num++) {
+            btns.push(<button>{num}</button>)
+        }
+        return <div>{btns}</div>;
+    }
     private increase = () => {
         this.setState((state, props) => ({
             curNum : state.curNum + 1
