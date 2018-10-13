@@ -1,6 +1,6 @@
 import * as React from 'react';
-import Button from './Button'
-import { Operations } from './Button'
+import MyButton from './MyButton'
+import { Operations } from './MyButton'
 import MyLabel from './MyLabel';
 
 export interface IMyComponentProps {
@@ -20,8 +20,10 @@ class MyComponent extends React.Component<IMyComponentProps, IState> {
     public render() {
         return <div>
         <MyLabel label = {this.state.curNum.toString()}/>
-        <Button caption="(Add)" passClickToParent={this.increase} operation={Operations.Add}/>
-        <Button caption="(Sub)" passClickToParent={this.decrease} operation={Operations.Sub}/>
+        <div>
+        <MyButton caption="(Add)" passClickToParent={this.increase} operation={Operations.Add}/>
+        <MyButton caption="(Sub)" passClickToParent={this.decrease} operation={Operations.Sub}/>
+        </div>
         {this.numButtons()}
         </div>
     }

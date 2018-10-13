@@ -1,5 +1,9 @@
 import * as React from 'react';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import { Button } from 'reactstrap';
+
 export enum Operations {
     Add,
     Sub,
@@ -12,7 +16,7 @@ export interface IButtonProps {
     passClickToParent : any
 }
 
-class Button extends React.Component<IButtonProps> {
+class MyButton extends React.Component<IButtonProps> {
     constructor(props: Readonly<IButtonProps>) {
         super(props);
     }
@@ -23,10 +27,10 @@ class Button extends React.Component<IButtonProps> {
 
     public render() {
         const caption = "Click me. " + this.props.caption
-        return <button onClick={this.onClick}>
+        return <Button color="info" onClick={this.onClick}>
             {caption} 
-        </button>
+        </Button>
     }
 }
 
-export default Button;
+export default MyButton;
